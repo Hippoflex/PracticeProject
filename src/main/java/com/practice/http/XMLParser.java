@@ -52,7 +52,7 @@ public class XMLParser {
     public static void xmlConnectPeriod(Date date1, Date date2, String NameID) throws IOException {
 
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        System.out.println(dateFormat.format(date1));
+        System.out.println(dateFormat.format(date1)+" - "+dateFormat.format(date2));
         String html = "http://www.cbr.ru/scripts/XML_dynamic.asp?date_req1="+dateFormat.format(date1)
                 +"&date_req2="+dateFormat.format(date2)+"&VAL_NM_RQ=R0"+NameID;
         Document doc = Jsoup
@@ -64,7 +64,6 @@ public class XMLParser {
 
         for (Element e : doc.select("Value")) {
             System.out.println(e.text());
-
         }
 
     }
