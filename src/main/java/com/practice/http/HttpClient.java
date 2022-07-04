@@ -23,9 +23,6 @@ public class HttpClient {
             System.out.println("Testing 1 - Send Http GET request");
             CloseableHttpResponse response = obj.sendGet();
             obj.printResponse(response);
-
-            //System.out.println("Testing 2 - Send Http POST request");
-            //obj.sendPost();
         } finally {
             obj.close();
         }
@@ -37,7 +34,7 @@ public class HttpClient {
     // Метод для отправки Http GET запроса.
     private CloseableHttpResponse sendGet() throws Exception{
         // HttpGet запрос для получения HTML-кода страницы https://www.google.com/search?q=mkyong.
-        HttpGet request = new HttpGet("http://www.cbr.ru/scripts/XML_daily.asp?date_req=22/06/2022");
+        HttpGet request = new HttpGet("http://www.cbr.ru/scripts/XML_dynamic.asp?date_req1=02/03/2001&date_req2=14/03/2001&VAL_NM_RQ=R01235");
 
         for (Header header : request.getAllHeaders()) {
             System.out.println(header.getName() + " : " + header.getValue());
